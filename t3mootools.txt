@@ -1,0 +1,2 @@
+script = res/js/gallery.js
+components=Window.DomReady,Fx.Base

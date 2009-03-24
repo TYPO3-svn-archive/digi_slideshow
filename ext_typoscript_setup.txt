@@ -1,0 +1,12 @@
+plugin.tx_digislideshow_pi1 {
+  mootools = {$plugin.tx_digislideshow_pi1.mootools}
+  imagebase = typo3conf/ext/digi_slideshow/res/
+  number = 1
+  interval = 5000
+  duration = 500
+  imagelist = demo01.jpg,demo02.jpg,demo03.jpg,demo04.jpg
+  image = IMG_RESOURCE
+  image.file = EXT:digi_slideshow/res/digitage.gif
+  #image.file.width = 150
+  #image.file.height = 200
+}

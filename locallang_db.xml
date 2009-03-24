@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+  <meta type="array">
+    <type>database</type>
+    <description>Language labels for database tables/fields belonging to extension 'digi_slideshow'</description>
+  </meta>
+  <data type="array">
+    <languageKey index="default" type="array">
+      <label index="tt_content.list_type_pi1">DIGI Slideshow</label>
+      <label index="tt_content.pi_flexform.tab1">Settings:</label>
+      <label index="tt_content.pi_flexform.tab2">Images:</label>
+      <label index="tt_content.pi_flexform.number">Number:</label>
+      <label index="tt_content.pi_flexform.interval">Interval (millisec.):</label>
+      <label index="tt_content.pi_flexform.duration">Duration (millisec.):</label>
+      <label index="tt_content.pi_flexform.images">Images:</label>
+    </languageKey>
+    <languageKey index="de" type="array">
+      <label index="tt_content.list_type_pi1">DIGI Slideshow</label>
+      <label index="tt_content.pi_flexform.tab1">Einstellungen:</label>
+      <label index="tt_content.pi_flexform.tab2">Bilder:</label>
+      <label index="tt_content.pi_flexform.number">Anzahl:</label>
+      <label index="tt_content.pi_flexform.interval">Interval (millisek.):</label>
+      <label index="tt_content.pi_flexform.duration">Dauer (millisek.):</label>
+      <label index="tt_content.pi_flexform.images">Bilder:</label>
+    </languageKey>
+  </data>
+</T3locallang>
