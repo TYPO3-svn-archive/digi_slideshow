@@ -45,7 +45,7 @@
               <type>input</type>
               <eval>int</eval>
               <range>
-                <upper>1000</upper>
+                <upper>10000</upper>
                 <lower>1</lower>
               </range>
               <default>500</default>
