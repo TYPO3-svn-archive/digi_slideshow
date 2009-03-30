@@ -1,4 +1,4 @@
 plugin.tx_digislideshow_pi1 {
-  #cat=digislideshow/file/b; type=string ; label=Mootools:Enter location of mootools 1.2+ library here...
-  mootools = EXT:digi_slideshow/res/js/mootools.js
+  #cat=digislideshow/file/b; type=string ; label=Mootools:Enter location of mootools 1.11+ library here...
+  mootools = EXT:digi_slideshow/res/js/mootools-1-11.js
 }

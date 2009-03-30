@@ -15,13 +15,13 @@ function digi_slideshow(conf){
   me.interval = conf[2];
   me.duration = conf[3];
   me.galleries = conf[4];
-  me.options = {property:'opacity',duration:me.duration};
+  me.options = {duration:me.duration,transition:Fx.Transitions.linear};
   me.box = [$(me.uid+'-1'),$(me.uid+'-2')];
   me.img = [$$('#'+me.uid+'-1 img'),$$('#'+me.uid+'-2 img')];
-  me.fx = [new Fx.Tween(me.box[0],me.options),new Fx.Tween(me.box[1],me.options)];
+  me.fx = [me.box[0].effect('opacity',me.options),me.box[1].effect('opacity',me.options)];  
   me.fx[0].addEvent("onComplete",function(){ me.step(); });
-  me.fx[0].set('visibility','visible');// show box 0
-  me.fx[1].set('visibility','hidden');// hide box 1
+  me.box[0].setStyle('visibility','visible');// show box 0
+  me.box[1].setStyle('visibility','hidden');// hide box 1
   
   me.init = function(){
     me.load(0,0); // init box 0 with gallery 0
@@ -36,8 +36,8 @@ function digi_slideshow(conf){
   };
   
   me.step = function(){// advance gallery
-    me.fx[1-me.hidden].set('visibility','hidden');//hide
-    me.fx[me.hidden].set('visibility','visible');//show
+    me.box[1-me.hidden].setStyle('visibility','hidden');//hide
+    me.box[me.hidden].setStyle('visibility','visible');//show
     me.hidden = ( me.hidden + 1 ) % 2;//toggle
     me.current = ((me.current+1)%me.galleries.length);//cycle
     me.next = ((me.current+1)%me.galleries.length);//cycle

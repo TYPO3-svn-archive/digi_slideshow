@@ -73,7 +73,13 @@ class tx_digislideshow_pi1 extends tslib_pibase {
     //print('<pre style="text-align:left;position:absolute;">');var_dump( $this->conf );print('</pre>');/*DEBUG*/
     
     // apply TS image settings
-    $files = explode(',',$this->conf["imagelist"]);
+    if(empty($this->conf["imagelist"])){
+        $files = $this->files($this->conf['imagebase']);
+    }else
+        $files = explode(',',$this->conf["imagelist"]);
+    
+    $files = $this->filter($files);
+    
     if( count($files) % $this->conf['number'] ) throw new Exception('Not enough images!');
     if(empty($this->conf['imagebase'])) $this->conf['imagebase'] = 'uploads/tx_digislideshow/';// if GIFBUILDER is used
     
@@ -144,6 +150,17 @@ class tx_digislideshow_pi1 extends tslib_pibase {
   }
   
   private function getPath($str){return str_replace('EXT:','typo3conf/ext/',$str);}
+  
+  private function files($path){
+    $files = glob($path.'*');
+    $files = array_map('basename',$files);
+    return $files;
+  }
+  
+  private function filter($files){
+    foreach( $files as $n => $f )if(preg_match('/.*\.(png|gif|jpg|jpeg|tif)/',$f))$tmp[] = $f;
+    return $tmp;
+  }
   
 }
 

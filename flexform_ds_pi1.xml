@@ -70,7 +70,7 @@
             <config>
               <type>group</type>
               <internal_type>file</internal_type>
-              <allowed>gif,jpg,jpeg,tif,bmp,pcx,tga,png,pdf,ai</allowed>
+              <allowed>png,gif,jpg,jpeg,tif</allowed>
               <max_size>1024</max_size>
               <uploadfolder>uploads/tx_digislideshow</uploadfolder>
               <show_thumbs>1</show_thumbs>
