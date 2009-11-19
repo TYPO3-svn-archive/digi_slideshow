@@ -15,10 +15,14 @@ function digi_slideshow(conf){
   me.interval = conf[2];
   me.duration = conf[3];
   me.galleries = conf[4];
-  me.options = {duration:me.duration,transition:Fx.Transitions.linear};
+  me.options = {property:'opacity',duration:me.duration,transition:Fx.Transitions.linear};
   me.box = [$(me.uid+'-1'),$(me.uid+'-2')];
   me.img = [$$('#'+me.uid+'-1 img'),$$('#'+me.uid+'-2 img')];
-  me.fx = [me.box[0].effect('opacity',me.options),me.box[1].effect('opacity',me.options)];  
+  if(Fx.Tween){
+    me.fx = [new Fx.Tween(me.box[0],me.options),new Fx.Tween(me.box[1],me.options)];/* mootools 1.12 */
+  }else{
+    me.fx = [me.box[0].effect('opacity',me.options),me.box[1].effect('opacity',me.options)];/* mootools 1.11 */
+  }
   me.fx[0].addEvent("onComplete",function(){ me.step(); });
   me.box[0].setStyle('visibility','visible');// show box 0
   me.box[1].setStyle('visibility','hidden');// hide box 1
