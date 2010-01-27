@@ -77,6 +77,8 @@ class tx_digislideshow_pi1 extends tslib_pibase {
         $files = $this->files($this->conf['imagebase']);
     }else
         $files = explode(',',$this->conf["imagelist"]);
+
+    $files = array_map('trim',$files);// remove possible whitespace between files
     
     $files = $this->filter($files);
     
@@ -158,7 +160,7 @@ class tx_digislideshow_pi1 extends tslib_pibase {
   }
   
   private function filter($files){
-    foreach( $files as $n => $f )if(preg_match('/.*\.(png|gif|jpg|jpeg|tif)/',strtolower($f)))$tmp[] = $f;
+    foreach( $files as $n => $f )if(preg_match('/.*\.(png|gif|jpg|jpeg|tif)/i',strtolower($f)))$tmp[] = $f;
     return $tmp;
   }
   
